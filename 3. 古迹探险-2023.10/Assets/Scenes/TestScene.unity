@@ -228,8 +228,8 @@ GameObject:
   - component: {fileID: 819747997}
   - component: {fileID: 819747996}
   - component: {fileID: 819747995}
-  m_Layer: 0
-  m_Name: Terrain
+  m_Layer: 6
+  m_Name: TestTerrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
