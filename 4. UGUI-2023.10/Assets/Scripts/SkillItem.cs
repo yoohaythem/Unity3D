@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class SkillItem : MonoBehaviour
 {
-    public float coldTime = 2;
+    public float coldTime = 2;  // 最大冷却时间
 
-    public KeyCode keyCode=KeyCode.Alpha1;
+    public KeyCode keyCode = KeyCode.Alpha1;
 
-    private float timer = 0;
+    private float timer = 0;  // 时钟计时
 
-    private bool isColding = false;
+    private bool isColding = false;   // 技能是否冷却
 
-    private Image coldMask;
+    private Image coldMask;  // 冷却图标
 
     // Start is called before the first frame update
     void Start()
@@ -26,10 +26,10 @@ public class SkillItem : MonoBehaviour
     {
         if (isColding)
         {
-            timer += Time.deltaTime;
+            timer += Time.deltaTime;   // 更新冷却时间
             coldMask.fillAmount = (coldTime - timer) / coldTime;
 
-            if(timer > coldTime)
+            if (timer > coldTime)  // 冷却时间大于最大冷却时间，重置isColding、coldMask、timer
             {
                 isColding = false;
                 coldMask.fillAmount = 0;
@@ -37,7 +37,7 @@ public class SkillItem : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(keyCode))
+        if (Input.GetKeyDown(keyCode))   // 按键触发技能
         {
             ReleaseSkill();
         }
@@ -49,7 +49,7 @@ public class SkillItem : MonoBehaviour
     }
     private void ReleaseSkill()
     {
-        if (isColding == false)
+        if (isColding == false)   // 初始化技能
         {
             isColding = true;
             timer = 0;
