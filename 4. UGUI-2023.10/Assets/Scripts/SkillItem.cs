@@ -7,7 +7,7 @@ public class SkillItem : MonoBehaviour
 {
     public float coldTime = 2;  // 最大冷却时间
 
-    public KeyCode keyCode = KeyCode.Alpha1;
+    public KeyCode keyCode = KeyCode.Alpha1;  // 单独提取属性，可以根据不同图标在界面上修改，提高代码复用性
 
     private float timer = 0;  // 时钟计时
 
