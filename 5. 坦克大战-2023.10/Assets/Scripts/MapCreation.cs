@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapCreation : MonoBehaviour {
+public class MapCreation : MonoBehaviour
+{
 
 
     //用来装饰初始化地图所需物体的数组。
@@ -56,6 +57,8 @@ public class MapCreation : MonoBehaviour {
         CreateItem(item[3], new Vector3(0, 8, 0), Quaternion.identity);
         CreateItem(item[3], new Vector3(10, 8, 0), Quaternion.identity);
 
+        // public void InvokeRepeating(string methodName, float time, float repeatRate)
+        // 反射方法，第一次四秒，后面每隔五秒
         InvokeRepeating("CreateEnemy", 4, 5);
 
 
@@ -78,7 +81,8 @@ public class MapCreation : MonoBehaviour {
         }
     }
 
-    private void CreateItem(GameObject createCameObject,Vector3 createPosition,Quaternion createRotation)
+    //设置游戏物体的父物体，打包成一个方法
+    private void CreateItem(GameObject createCameObject, Vector3 createPosition, Quaternion createRotation)
     {
         GameObject itemGo = Instantiate(createCameObject, createPosition, createRotation);
         itemGo.transform.SetParent(gameObject.transform);
@@ -97,7 +101,7 @@ public class MapCreation : MonoBehaviour {
             {
                 return createPosition;
             }
-            
+
         }
     }
 
@@ -107,7 +111,7 @@ public class MapCreation : MonoBehaviour {
     {
         for (int i = 0; i < itemPositionList.Count; i++)
         {
-            if (createPos==itemPositionList[i])
+            if (createPos == itemPositionList[i])
             {
                 return true;
             }
@@ -120,11 +124,11 @@ public class MapCreation : MonoBehaviour {
     {
         int num = Random.Range(0, 3);
         Vector3 EnemyPos = new Vector3();
-        if (num==0)
+        if (num == 0)
         {
             EnemyPos = new Vector3(-10, 8, 0);
         }
-        else if (num==1)
+        else if (num == 1)
         {
             EnemyPos = new Vector3(0, 8, 0);
         }
