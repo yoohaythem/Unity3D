@@ -110,7 +110,7 @@ public class Player : MonoBehaviour
         {
             moveAudio.clip = tankAudio[1];
 
-            if (!moveAudio.isPlaying)
+            if (!moveAudio.isPlaying)  // 当前不在播放才开始播放
             {
                 moveAudio.Play();
             }
@@ -162,6 +162,7 @@ public class Player : MonoBehaviour
             return;
         }
 
+        // 修改玩家死亡标志位
         PlayerManager.Instance.isDead = true;
 
         //产生爆炸特效

@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     //属性值
     public float moveSpeed = 3;
     private Vector3 bullectEulerAngles;
-    private float v = -1;
+    private float v = -1;  // 敌人出生之后默认向下走
     private float h;
 
     //引用
@@ -146,6 +146,7 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
+    // 敌人碰撞之后触发旋转效果，防止坦克扎堆
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
