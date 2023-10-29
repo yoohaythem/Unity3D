@@ -4,13 +4,6 @@ using UnityEngine.UI;
 public class MainUIController : MonoBehaviour
 {
     private static MainUIController _instance;
-    public static MainUIController Instance
-    {
-        get
-        {
-            return _instance;
-        }
-    }
 
     public bool hasBorder = true;
     public bool isPause = false;
@@ -24,9 +17,11 @@ public class MainUIController : MonoBehaviour
     public Image bgImage;
     private Color tempColor;
 
+    public static MainUIController Instance { get => _instance; set => _instance = value; }
+
     void Awake()
     {
-        _instance = this;
+        Instance = this;
     }
 
     void Start()
@@ -94,7 +89,7 @@ public class MainUIController : MonoBehaviour
         isPause = !isPause;
         if (isPause)
         {
-            Time.timeScale = 0;
+            Time.timeScale = 0;  // 时间缩放
             pauseImage.sprite = pauseSprites[1];
         }
         else

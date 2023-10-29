@@ -1773,9 +1773,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d07dd318e56544b81e4f3cc38f847b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xlimit: 20
+  xlimit: 21
   ylimit: 11
-  xoffset: 7
+  xoffset: 8
   foodPrefab: {fileID: 1723210693003212, guid: 9e314a5a67a4fbd48a0467f3a3ee37a2, type: 3}
   rewardPrefab: {fileID: 1022767353511264, guid: 3fb63c39406b1e8408683f3a33a2f813, type: 3}
   foodSprites:

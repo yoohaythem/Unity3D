@@ -110,19 +110,19 @@ public class SnakeHead : MonoBehaviour
         CancelInvoke();
         isDie = true;
         Instantiate(dieEffect);
-        PlayerPrefs.SetInt("lastl", MainUIController.Instance.length);
-        PlayerPrefs.SetInt("lasts", MainUIController.Instance.score);
+        PlayerPrefs.SetInt("lastl", MainUIController.Instance.length);   // 放在注册表里保存起来了
+        PlayerPrefs.SetInt("lasts", MainUIController.Instance.score);   // 放在注册表里保存起来了
         if (PlayerPrefs.GetInt("bests", 0) < MainUIController.Instance.score)
         {
             PlayerPrefs.SetInt("bestl", MainUIController.Instance.length);
             PlayerPrefs.SetInt("bests", MainUIController.Instance.score);
         }
-        StartCoroutine(GameOver(1.5f));
+        StartCoroutine(GameOver(1.5f));  // 协程的调用需要用StartCoroutine来调用
     }
 
-    IEnumerator GameOver(float t)
+    IEnumerator GameOver(float t)  // 协程
     {
-        yield return new WaitForSeconds(t);
+        yield return new WaitForSeconds(t);   // 等待t秒后开始下一句
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 
